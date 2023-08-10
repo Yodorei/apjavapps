@@ -51,8 +51,7 @@ por el tiempo que dure la propulsión.
 • Al volar la armadura hará un uso intensivo de las botas y de los guantes un uso
 normal consumiendo el triple de la energía establecida para las botas y el doble para los guantes.
 • Al utilizar los guantes como armas el consumo se triplica durante el tiempo del disparo.
-• Al utilizar las botas para caminar o correr el consumo es normal durante el tiempo que se camina
-o se corra.
+• Al utilizar las botas para caminar o correr el consumo es normal durante el tiempo que se camina o se corra.
 • Cada vez que se escribe en la consola o se habla a través del sintetizador se consume lo
 establecido en estos dispositivos. Solo se usa en nivel básico.
 • Cada vez que se efectúa una acción se llama a los métodos usar del dispositivo se le pasa el nivel

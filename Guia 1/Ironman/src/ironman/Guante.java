@@ -9,10 +9,8 @@ informar al generador se ha consumido esa cantidad de energía.
  */
 package ironman;
 
-/**
- *
- * @author diego
- */
 public class Guante {
+    
+    
     
 }
