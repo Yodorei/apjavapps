@@ -81,6 +81,11 @@ public class Interfaz extends javax.swing.JFrame {
         jMenu2.add(ConsNombre);
 
         ConsPrecio.setText("Por precio");
+        ConsPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsPrecioActionPerformed(evt);
+            }
+        });
         jMenu2.add(ConsPrecio);
 
         jMenuBar1.add(jMenu2);
@@ -104,7 +109,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void ConsNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsNombreActionPerformed
         jEscritorio.removeAll(); //borrar pantallas abiertas
         jEscritorio.repaint(); //repinta el desktop
-        ConsultaNombre cn=new ConsultaNombre(); //inicializo la ventana
+        ConsultaNombre cn = new ConsultaNombre(); //inicializo la ventana
         cn.setVisible(true); // hago visible la ventana
         jEscritorio.add(cn); // agrego al escritorio la ventana
         jEscritorio.moveToFront(cn);//manda al frente la ventana
@@ -113,11 +118,20 @@ public class Interfaz extends javax.swing.JFrame {
     private void ConsRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsRubroActionPerformed
         jEscritorio.removeAll(); //borrar pantallas abiertas
         jEscritorio.repaint(); //repinta el desktop
-        ConsultaRubro cr=new ConsultaRubro(); //inicializo la ventana
+        ConsultaRubro cr = new ConsultaRubro(); //inicializo la ventana
         cr.setVisible(true); // hago visible la ventana
         jEscritorio.add(cr); // agrego al escritorio la ventana
         jEscritorio.moveToFront(cr);//manda al frente la ventana
     }//GEN-LAST:event_ConsRubroActionPerformed
+
+    private void ConsPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsPrecioActionPerformed
+        jEscritorio.removeAll(); //borrar pantallas abiertas
+        jEscritorio.repaint(); //repinta el desktop
+        ConsultaPrecio cp = new ConsultaPrecio(); //inicializo la ventana
+        cp.setVisible(true); // hago visible la ventana
+        jEscritorio.add(cp); // agrego al escritorio la ventana
+        jEscritorio.moveToFront(cp);//manda al frente la ventana
+    }//GEN-LAST:event_ConsPrecioActionPerformed
 
     /**
      * @param args the command line arguments

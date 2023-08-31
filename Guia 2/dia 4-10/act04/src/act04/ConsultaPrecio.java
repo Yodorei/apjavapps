@@ -153,7 +153,7 @@ public class ConsultaPrecio extends javax.swing.JInternalFrame {
         
         for(Producto produ:Interfaz.listaprod){
             
-            if(produ.getPrecio() < Double.parseDouble(jtMax.getText())){
+            if(produ.getPrecio() <= Double.parseDouble(jtMax.getText()) && produ.getPrecio() >= Double.parseDouble(jtMin.getText())){
                 modelo.addRow(new Object[]{
                     produ.getCodigo(),
                     produ.getDescripcion(),
@@ -172,14 +172,14 @@ public class ConsultaPrecio extends javax.swing.JInternalFrame {
         
         for(Producto produ:Interfaz.listaprod){
             
-            if(produ.getPrecio() > Double.parseDouble(jtMax.getText())){
+            if(produ.getPrecio() >= Double.parseDouble(jtMin.getText()) && produ.getPrecio() <= Double.parseDouble(jtMax.getText())){
                 modelo.addRow(new Object[]{
                     produ.getCodigo(),
                     produ.getDescripcion(),
                     produ.getPrecio(),
                     produ.getStock(),
             });   
-                if(jtMax.getText().isEmpty()){
+                if(jtMin.getText().isEmpty()){
                 modelo.setRowCount(0);
                 }
             }
