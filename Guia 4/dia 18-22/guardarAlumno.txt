@@ -1,0 +1,28 @@
+public void guardarAlumno(Alumno alumno){//viene un alumno sin id
+       String sql="INSERT INTO alumno (nombre, fecNac, activo) VALUES (?,?,?)";
+        try {
+            PreparedStatement ps= con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, alumno.getNombre());
+            ps.setDate(2,Date.valueOf(alumno.getFecNac()));
+            ps.setBoolean(3, alumno.getActivo());
+            
+            ps.executeUpdate();//guardo en la bd
+            
+            ResultSet rs= ps.getGeneratedKeys();//recupero la clave primaria
+            
+            if (rs.next()){
+               alumno.setId(rs.getInt(1));//completo el alumno en java
+                System.out.println("Alta exitosa");
+            }else
+                System.out.println("error al obtener el id ");
+            
+        
+        
+        
+        
+        } catch (SQLException ex) {
+            System.out.println("Error al insertar "+ex);;
+        }
+       
+       
+    }

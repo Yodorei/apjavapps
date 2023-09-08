@@ -18,6 +18,7 @@ public class JavaApplication34 {
     
     public static void main(String[] args) {
         try {
+            
             //carga de BD
             Class.forName("org.mariadb.jdbc.Driver");
             
@@ -66,9 +67,7 @@ public class JavaApplication34 {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "No se pudo conectar a  la base de datos"+ex);
         }
-        
-          
-        
+      
     }
     
 }
