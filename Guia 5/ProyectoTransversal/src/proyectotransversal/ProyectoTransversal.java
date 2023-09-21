@@ -17,15 +17,49 @@ Funcionalidad: el sistema deberá
  */
 package proyectotransversal;
 
-/**
- *
- * @author diego
- */
+
+import java.time.LocalDate;
+import data.*;
+import entidades.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProyectoTransversal {
 
 
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Conexion con=new Conexion("jdbc:mariadb://localhost:3306/proyecto_transversal","root","");
+        Alumno_data ad=new Alumno_data(con);
+        Materia_data md=new Materia_data(con);
+        Inscripcion_data id=new Inscripcion_data(con);
+        Alumno alumno=new Alumno(41339109,"Roldan","Nicolas",LocalDate.of(1998, 10, 26),true);
+        //ad.agregarAlumno(alumno);
+//        ad.modificarEstadoAlumno(41339109, true);
+//        PRUEBA LISTAR
+        Alumno alumno2=new Alumno(13467088,"Rodriguez","Ignacio",LocalDate.of(1958, 7, 26),true);
+//        ad.agregarAlumno(alumno2);
+        Alumno alumno3=new Alumno(39993976,"Rech","Pablo",LocalDate.of(1996, 1, 20),true);
+//        ad.agregarAlumno(alumno3);
+        Alumno alumno4=new Alumno(40222369,"Fernandez","Juan",LocalDate.of(1997, 12, 01),true);
+//        ad.agregarAlumno(alumno4);
+//        List<Alumno>alumnos=ad.listarAlumnosPorApellido("R");
+//        for(Alumno a:alumnos){
+//            System.out.println(a.toString());
+//        }        
+//        System.out.println(ad.buscarAlumnoPorDni(41339109));
+            System.out.println(id.listarMateriasNOCursadasPorAlumno(41339109));
+         
+//         System.out.println(id.listarInscripciones());
+//         System.out.println(id.listarInscripcionesPorAlumno(39993976));
+//         System.out.println(id.listarMateriasNOCursadasPorAlumno(39993976));
+//          System.out.println(id.listarMateriasCursadasPorAlumno(39993976));
+//           System.out.println(id.listarAlumnosPorMateria("Calculo"));
+
+//           id.eliminarInscripcion(41339109, "Calculo");
+
+//           System.out.println(ad.listarAlumnos());
+     
     }
     
 }
