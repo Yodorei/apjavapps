@@ -1,84 +1,48 @@
 
-+Insertar datos en una tabla: "INSERT INTO -nombreTabla- (campos/columnas que me interesan de la tabla) 
-                                                 VALUES (valores a insertar en los campos/columnas)"
++Insertar datos en una tabla: "INSERT INTO -nombreTabla- (campos/columnas que me interesan de la tabla) VALUES (valores a insertar en los campos/columnas)"
 
-+Consultar datos en una tabla: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- 
-                                                    FROM -tablaDeLaCualQueremosSacarDatos-
-                                                    WHERE -expresionLogica- "
++Consultar datos en una tabla: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- FROM - tablaDeLaCualQueremosSacarDatos- WHERE -expresionLogica- "
                    
-                                                    "SELECCIONAR...
-                                                     DESDE...
-                                                     FILTRO..."
+"SELECCIONAR...DESDE...FILTRO..."
+
 
 [EXPRESIONES LOGICAS]: 
 
-                                                {  "<" , ">" o "="  }
-                                                { LIKE '-nombreABuscar-' } ----> Comparar datos tipo texto ------>  EJEMPLO:  "Aquellos campos que empiecen con -nombreABuscar-" ------> LIKE -nombreABuscar-%
-                                                                                                                                                                                "Aquellos campos que terminen con -nombreABuscar-"  ------> LIKE %-nombreABuscar-
-                                                                                                                                                                                "Aquellos campos que contengan -nombreABuscar-"      ------> LIKE %-nombreABuscar-%
-                                                { "AND" , "OR" , "NOT" }  ------>  "Y SEA" , "O SEA" , "NO SEA"
-                                                {BETWEEN} ------>  "ENTRE"
+{  "<" , ">" o "="  }
 
-+ Ordenar datos en una tabla: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- 
-                                                  FROM -tablaDeLaCualQueremosSacarDatos-
-                                                  WHERE -expresionLogica- 
-                                                  ORDER BY -campo/columnaPorElQueQuieroOrdenar-   ASC/DESC (ascendete/descendente)"
+{ LIKE '-nombreABuscar-' } ----> Comparar datos tipo texto 
+"Aquellos campos que empiecen con -nombreABuscar-" ------> LIKE -nombreABuscar-%
+"Aquellos campos que terminen con -nombreABuscar-"  ------> LIKE %-nombreABuscar-
+"Aquellos campos que contengan -nombreABuscar-"      ------> LIKE %-nombreABuscar-%
 
-+ Comparar un valor con una lista de valores posibles ( "IN" / "NOT IN" ):  "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- 
-                                                                                                                        FROM -tablaDeLaCualQueremosSacarDatos-
-                                                                                                                        WHERE -campo/columna- IN (-elementosQueNosInteresanSeparadosPorComas-) "
+{ "AND" , "OR" , "NOT" }  ------>  "Y SEA" , "O SEA" , "NO SEA"
 
-                                                                                                                        "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- 
-                                                                                                                        FROM -tablaDeLaCualQueremosSacarDatos-
-                                                                                                                        WHERE -campo/columna- NOT IN (-elementosQueNONosInteresanSeparadosPorComas-) "
+{BETWEEN} ------>  "ENTRE"
 
-+ Contar datos que cumplan con determinada condicion ( "COUNT" ): "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- COUNT(campo/columna) AS -renombreDeColumna-
-                                                                                                                    FROM -tablaDeLaCualQueremosSacarDatos-
-                                                                                                                    WHERE -expresionLogica- "
++ Ordenar datos en una tabla: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- FROM -tablaDeLaCualQueremosSacarDatos- WHERE -expresionLogica- ORDER BY -campo/columnaPorElQueQuieroOrdenar- ASC/DESC (ascendete/descendente)"
 
-+ Contar datos segun campo/columna y agruparlos: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- COUNT(campo/columna) AS -renombreDeColumna-
-                                                                                       FROM -tablaDeLaCualQueremosSacarDatos-
-                                                                                       GROUP BY -campo/columnaQueMeInteresa- "
++ Comparar un valor con una lista de valores posibles ( "IN" / "NOT IN" ):  "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- FROM -tablaDeLaCualQueremosSacarDatos- WHERE -campo/columna- IN (-elementosQueNosInteresanSeparadosPorComas-) "
 
-                                                                                     *EJEMPLO: SELECT acceso, COUNT(*) as Cantidad
-                                                                                                          FROM empleado
-                                                                                                          GROUP BY acceso
+"SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- FROM -tablaDeLaCualQueremosSacarDatos- WHERE -campo/columna- NOT IN (-elementosQueNONosInteresanSeparadosPorComas-) "
 
-+ Sumar cantidades segun campo/columna y agruparlos: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- COUNT(campo/columna) AS -renombreDeColumna-
-                                                                                                FROM -tablaDeLaCualQueremosSacarDatos-
-                                                                                                GROUP BY -campo/columnaQueMeInteresa- "
++ Contar datos que cumplan con determinada condicion ( "COUNT" ): "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- COUNT(campo/columna) AS -renombreDeColumna- FROM -tablaDeLaCualQueremosSacarDatos- WHERE -expresionLogica- "
 
++ Contar datos segun campo/columna y agruparlos: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- COUNT(campo/columna) AS -renombreDeColumna- FROM -tablaDeLaCualQueremosSacarDatos- GROUP BY -campo/columnaQueMeInteresa- "
 
-+ Sumar datos: "SELECT SUM(-campoConValoresNumericos-) AS -renombrarCampo-
-                           FROM -tablaQueMeInteresa-
-                           GRUOP BY -DatoDeLaTablaQueMeInteresaAgrupar-"
+*EJEMPLO: SELECT acceso, COUNT(*) as Cantidad FROM empleado GROUP BY acceso
 
-+ Promediar datos: "SELECT AVG(-campoConValoresNumericos-) AS -renombrarCampo-
-                                 FROM -tablaQueMeInteresa-
-                                 GRUOP BY -DatoDeLaTablaQueMeInteresaAgrupar-"
++ Sumar cantidades segun campo/columna y agruparlos: "SELECT -campos/columnasQueMeInteresaMostrarSeparadosPorComas- COUNT(campo/columna) AS -renombreDeColumna- FROM -tablaDeLaCualQueremosSacarDatos- GROUP BY -campo/columnaQueMeInteresa- "
 
-+ Extraer datos de mas de una tabla con la sentencia "SELECT": "SELECT -campos- 
-                                                                                                            FROM -tabla1-
-                                                                                                            JOIN -tabla2- ON (-condicionDeUnion-)
-                                                                                                            WHERE -condicion-"
++ Sumar datos: "SELECT SUM(-campoConValoresNumericos-) AS -renombrarCampo- FROM -tablaQueMeInteresa- GRUOP BY -DatoDeLaTablaQueMeInteresaAgrupar-"
 
++ Promediar datos: "SELECT AVG(-campoConValoresNumericos-) AS -renombrarCampo- FROM -tablaQueMeInteresa- GRUOP BY -DatoDeLaTablaQueMeInteresaAgrupar-"
 
-                                                                                                            *EJEMPLO: SELECT nombre,descripcion,stock
-                                                                                                                                 FROM herramienta JOIN movimiento ON(herramienta.idHerramienta=movimiento.idHerramienta)
-                                                                                                                                                                                                    (clavePrimariaTabla1=claveForaneaTabla2)
-                                                                                                                                 WHERE idEmpleado=1
++ Extraer datos de mas de una tabla: "SELECT -campos- FROM -tabla1- JOIN -tabla2- ON (-condicionDeUnion-) WHERE -condicion-"
 
-+ Actualizar datos de una tabla:        "UPDATE -tabla-
-                                                            SET -campo/sQueQueremosActualizar- = -nuevoValor-
+*EJEMPLO: SELECT nombre,descripcion,stock FROM herramienta JOIN movimiento ON(herramienta.idHerramienta=movimiento.idHerramienta) (clavePrimariaTabla1=claveForaneaTabla2) WHERE idEmpleado=1
+
++ Actualizar datos de una tabla:        "UPDATE -tabla- SET -campo/sQueQueremosActualizar- = -nuevoValor-
 (Si necesito condicion agregamos:)  WHERE -condicion-"
 
-+ Eliminar todos los datos de una fila:  "DELETE
-                                                                FROM -tabla-
++ Eliminar todos los datos de una fila:  "DELETE FROM -tabla- 
 (Si necesito condicion agregamos:)       WHERE -condicion- "
-
-
-
-
-
-                                                
-           
